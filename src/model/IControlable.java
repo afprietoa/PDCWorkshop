@@ -4,12 +4,21 @@
  */
 package model;
 
+
 /**
- *
+ *<h1>IControlable<h1>
+ * interface, it defines two abstract methods.
+ * it is also responsible of delegate the implementation of control methods.
  * @author afprietoa
  */
 public interface IControlable {
+   /**
+   * launch abstract method<br>
+   */
     public abstract void launch(Location current);
+   /**
+   * land abstract method<br>
+   */
     public abstract void land(Location destination);
 
 }

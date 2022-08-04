@@ -57,6 +57,10 @@ public abstract class SpaceShip implements IControlable {
     @Override
     public abstract String toString();
     
+    /**
+     * It requests values by console.<br>
+     * <b>post: </b> values requested from the console are what initialize the class state.
+     */
     public void input(){
         Scanner scannStr = new Scanner(System.in);
         Scanner scannInt = new Scanner(System.in);
@@ -133,7 +137,10 @@ public abstract class SpaceShip implements IControlable {
 
     }
     
-    
+    /**
+     * It prints all values of the class <br>
+     * <b>post: </b>  each value that defines the class state is printed by the console. 
+     */
     public void print(){
         System.out.println("Spaceship details:");
         System.out.println("Ship name :" + name);
@@ -146,6 +153,16 @@ public abstract class SpaceShip implements IControlable {
     public String getIdentifier() {
         return identifier;
     }
+
+    public String getPropellant() {
+        return propellant;
+    }
+
+
+    public int getThrust() {
+        return thrust;
+    }
+
     
     
 }

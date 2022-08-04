@@ -61,6 +61,10 @@ public class Load {
         return name;
     }
     
+     /**
+     * It requests values by console.<br>
+     * <b>post: </b> values requested from the console are what initialize the class state.
+     */
     public void input(){
         Scanner scannStr = new Scanner(System.in);
         Scanner scannInt = new Scanner(System.in);
@@ -73,7 +77,6 @@ public class Load {
         name = scannStr.nextLine();
         System.out.print("weight: ");
         weight = scannDbl.nextDouble();
-        System.out.print("id: ");
-        id = scannInt.nextInt();
+
     } 
 }

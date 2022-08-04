@@ -14,7 +14,10 @@ public class SplashScreen {
 
     public SplashScreen() {
     }
-    
+     /**
+     * It prints a sequence of ASCII symbols.<br>
+     * <b>post: </b> ASCII art is printed inside of a loop.
+     */
     public static void animateScreen() throws InterruptedException{
         
         System.out.println("                                                               _     _           ");

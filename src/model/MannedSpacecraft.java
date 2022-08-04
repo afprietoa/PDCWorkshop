@@ -16,10 +16,29 @@ import view.Menu;
  *
  * @author afprietoa
  */
-public class MannedSpacecraft extends SpaceShip implements IOperable {
+public class MannedSpacecraft extends SpaceShip implements ISchedulable {
+    
+    //-----------------------------------------------------------------
+    // Attributes
+    //-----------------------------------------------------------------
+    
+   /**
+    * number of travelers
+    */
      private int numTravelers;
+   /**
+    * spaceship travelers list
+    */
      private static List<Traveler> travelers; 
 
+     
+    //-----------------------------------------------------------------
+    // Constructor
+    //------------------------------------------------------------------
+    
+    /**
+     * It initializes the defaults values. <br>
+     */
     public MannedSpacecraft () {
         super();
         this.numTravelers = 0;
@@ -30,13 +49,31 @@ public class MannedSpacecraft extends SpaceShip implements IOperable {
         this.numTravelers = numTravelers;
         travelers= new ArrayList<Traveler>();
     }
-
+    
+     /**
+     * It initializes the data of the class with the values that come by parameter. <br>
+     * @param shipLoap day number
+     * @param name name of spaceship
+     * @param capacity weight capacity spaceship
+     * @param propellant fuel which is burned with an oxidizer
+     * @param weight weight of spaceship
+     * @param height height of spaceship
+     * @param thrust thrust due to fuel
+     * @param speed speed that reaches the spaceship
+     * @param launchDate launch date of spaceship
+     * @param identifier unique identifier of spaceship
+     * @param travelers list of travelers carried by   spaceship
+     */
     public MannedSpacecraft(int numTravelers, String name, int capacity, String propellant, double weight, double height, int thrust, int speed, LaunchDate launchDate, String identifier) {
         super(name, capacity, propellant, weight, height, thrust, speed, launchDate, identifier);
         this.numTravelers = numTravelers;
         travelers= new ArrayList<Traveler>();
     }
     
+    /**
+     * CRUD of collection of travelers <br>
+     * <b>post: </b>  all operations of CRUD are applied to list of travelers. 
+     */
     public void crudTraveler( ) {
          
           int ch;  
@@ -146,7 +183,10 @@ public class MannedSpacecraft extends SpaceShip implements IOperable {
         }while(ch!=6);
     }
 
-        
+     /**
+     * It requests values by console.<br>
+     * <b>post: </b> values requested from the console are what initialize the class state.
+     */    
     public void input(){
         Scanner scannInt = new Scanner(System.in);
         System.out.println("Unmanned Spacecraft");
@@ -158,6 +198,10 @@ public class MannedSpacecraft extends SpaceShip implements IOperable {
         crudTraveler( );
     }
     
+    /**
+     * It prints all values of the class <br>
+     * <b>post: </b>  each value that defines the class state is printed by the console. 
+     */
     public void print(){
         System.out.println("Full Time Employee");
         super.print();
@@ -167,31 +211,40 @@ public class MannedSpacecraft extends SpaceShip implements IOperable {
   
     @Override
     public String toString() {
-        return " communications satellite";
+        return " Manned Spacecraft";
     }
 
     @Override
     public void launch(Location current) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("launching in "+ current);
+        System.out.println("The propellant "+ this.getPropellant() +" provide a trhust of"+ this.getThrust());
     }
 
     @Override
     public void land(Location destination) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("landing in "+ destination);
     }
 
     @Override
-    public boolean isOnLoad(Load l) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean isOnBoard(Traveler t) {
+        if(!travelers.isEmpty()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
-    public void load(Load l) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void board(Traveler t) {
+        System.out.print("Traveler board "+ t.getName()+" the spaceship with a weight of" + t.getWeight());
+        System.out.println("The balance of the number of travelers is " + travelers.size() );
     }
 
     @Override
-    public void unLoad(Load l) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }   
+    public void leave(Traveler t) {
+        System.out.print("Traveler leave "+ t.getName()+" the spaceship with a weight of" + t.getWeight());
+        System.out.println("The balance of the number of travelers is  " + travelers.size() );
+    }
+
+  
 }

@@ -66,6 +66,10 @@ public class Traveler {
         return id + " " + name + " " + weight;
     }
     
+     /**
+     * It requests values by console.<br>
+     * <b>post: </b> values requested from the console are what initialize the class state.
+     */
     public void input(){
         Scanner scannStr = new Scanner(System.in);
         Scanner scannInt = new Scanner(System.in);

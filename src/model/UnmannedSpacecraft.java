@@ -16,9 +16,28 @@ import view.Menu;
  * @author afprietoa
  */
 public class UnmannedSpacecraft extends SpaceShip implements IOperable {
+    
+    //-----------------------------------------------------------------
+    // Attributes
+    //-----------------------------------------------------------------
+    
+   /**
+    * description of research phenomenon
+    */
     private String researchPhenomenon;
+    
+   /**
+    * spaceship loads list
+    */
     private static List<Load> loads; 
-
+    
+    //-----------------------------------------------------------------
+    // Constructor
+    //------------------------------------------------------------------
+    
+    /**
+     * It initializes the defaults values. <br>
+     */
     public UnmannedSpacecraft () {
         super();
         this.researchPhenomenon = "none";
@@ -29,13 +48,31 @@ public class UnmannedSpacecraft extends SpaceShip implements IOperable {
         this.researchPhenomenon = researchPhenomenon;
         loads = new ArrayList<Load>();
     }
-
+    
+    /**
+     * It initializes the data of the class with the values that come by parameter. <br>
+     * @param shipLoap day number
+     * @param name name of spaceship
+     * @param capacity weight capacity spaceship
+     * @param propellant fuel which is burned with an oxidizer
+     * @param weight weight of spaceship
+     * @param height height of spaceship
+     * @param thrust thrust due to fuel
+     * @param speed speed that reaches the spaceship
+     * @param launchDate launch date of spaceship
+     * @param identifier unique identifier of spaceship
+     * @param loads list of loads carried by the spaceship
+     */
     public UnmannedSpacecraft(String researchPhenomenon, String name, int capacity, String propellant, double weight, double height, int thrust, int speed, LaunchDate launchDate, String identifier) {
         super(name, capacity, propellant, weight, height, thrust, speed, launchDate, identifier);
         this.researchPhenomenon = researchPhenomenon;
         loads = new ArrayList<Load>();
     }
-
+    
+     /**
+     * CRUD of collection of loads <br>
+     * <b>post: </b>  all operations of CRUD are applied to list of loads. 
+     */
     public void crudLoad( ) {
          
           int ch;  
@@ -145,6 +182,11 @@ public class UnmannedSpacecraft extends SpaceShip implements IOperable {
         }while(ch!=6);
     }    
     
+    
+     /**
+     * It requests values by console.<br>
+     * <b>post: </b> values requested from the console are what initialize the class state.
+     */
     public void input(){
         Scanner scannStr = new Scanner(System.in);
         System.out.println("Unmanned Spacecraft");
@@ -156,6 +198,10 @@ public class UnmannedSpacecraft extends SpaceShip implements IOperable {
         crudLoad( );
     }
     
+    /**
+     * It prints all values of the class <br>
+     * <b>post: </b>  each value that defines the class state is printed by the console. 
+     */
     public void print(){
         System.out.println("Unmanned Spacecraft");
         super.print();
@@ -177,32 +223,40 @@ public class UnmannedSpacecraft extends SpaceShip implements IOperable {
            
     @Override
     public String toString() {
-        return " communications satellite";
+        return " Unmanned spacecraft";
     }
 
     @Override
     public void launch(Location current) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         System.out.println("launching in "+ current);
+         System.out.println("The propellant "+ this.getPropellant() +" provide a trhust of"+ this.getThrust());
     }
 
     @Override
     public void land(Location destination) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("landing in "+ destination);
     }
 
     @Override
     public boolean isOnLoad(Load l) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(!loads.isEmpty()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
     public void load(Load l) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        System.out.print("loading a wieght of:" + l.getWeight());
+        System.out.println("The balance of the number of loads is " + loads.size() );
     }
 
     @Override
     public void unLoad(Load l) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         System.out.print("unloading a wieght of:" + l.getWeight());
+         System.out.println("The balance of the number of loads is " + loads.size() );
     }
     
     
