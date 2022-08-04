@@ -37,7 +37,7 @@ public class MannedSpacecraft extends SpaceShip implements IOperable {
         travelers= new ArrayList<Traveler>();
     }
     
-    public void addTraveler( ) {
+    public void crudTraveler( ) {
          
           int ch;  
         Scanner scanInt = new Scanner(System.in);
@@ -155,7 +155,7 @@ public class MannedSpacecraft extends SpaceShip implements IOperable {
         System.out.print("Number of travelers: ");
         numTravelers = scannInt.nextInt();
         System.out.print("Enter travelers: ");
-        addTraveler( );
+        crudTraveler( );
     }
     
     public void print(){

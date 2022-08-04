@@ -36,7 +36,7 @@ public class UnmannedSpacecraft extends SpaceShip implements IOperable {
         loads = new ArrayList<Load>();
     }
 
-    public void addLoad( ) {
+    public void crudLoad( ) {
          
           int ch;  
         Scanner scanInt = new Scanner(System.in);
@@ -153,7 +153,7 @@ public class UnmannedSpacecraft extends SpaceShip implements IOperable {
         System.out.print("research phenomenon: ");
         researchPhenomenon = scannStr.nextLine();
         System.out.print("Enter loads: ");
-        addLoad( );
+        crudLoad( );
     }
     
     public void print(){
