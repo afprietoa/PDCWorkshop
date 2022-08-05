@@ -7,7 +7,8 @@ has an infinite execution from a console menu in which it is possible to create 
 
 The program code was built from the design UML diagram, which can be seen below:
 
-![SpaceshipUML](https://user-images.githubusercontent.com/68924563/182985064-58f3f539-219c-470a-89d4-56b749d558f1.jpg)
+![SpaceshipUML](https://user-images.githubusercontent.com/68924563/183087130-fc6e54ae-76ae-4d88-879a-3f9b48026b3f.jpg)
+
 
 
 
