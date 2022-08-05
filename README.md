@@ -1,8 +1,8 @@
 # Programing, Design & Construction Workshop
 
-This workshop contains evidence of handling abstraction, interfaces and polymorphism in design and programming.
+This workshop contains evidence on handling abstraction, interfaces, and polymorphism in design and programming.
 
-The program was design with the Model - View - Controller pattern (MVC) and the Singleton pattern. The program 
+The program was designed with the Model - View - Controller pattern (MVC) and the Singleton pattern. The program 
 has an infinite execution from a console menu in which it is possible to create the different types of spaceships.
 
 The program code was built from the design UML diagram, which can be seen below:
